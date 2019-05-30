@@ -84,11 +84,12 @@ if success then
 		TriggerEvent('mhacking:hide')
 	end
 end	
-				
+				if IsControlJustReleased(0, Keys['H']) then
+					TriggerEvent("mhacking:show") --This line is where the hacking even starts
+					TriggerEvent("mhacking:start",7,19,mycb) --This line is the difficulty and tells it to start. First number is how long the blocks will be the second is how much time they have is.
+				end
 				
 				if IsControlJustReleased(0, Keys['E']) then
-							TriggerEvent("mhacking:show") --This line is where the hacking even starts
-							TriggerEvent("mhacking:start",7,19,mycb) --This line is the difficulty and tells it to start. First number is how long the blocks will be the second is how much time they have is.
 					if isAuthorized then
 						doorID.locked = not doorID.locked
 
